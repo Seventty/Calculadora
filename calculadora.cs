@@ -2,11 +2,11 @@ using System;
 namespace algo{
 	class calculadora{
 		public static void Main(){
-						Console.WriteLine("Bienvenido a una calculadora en c#\nPresiona cualquier tecla para continuar...");
-						Console.ReadKey();
-						Console.Clear();
-						Menu();
-					}
+		Console.WriteLine("Bienvenido a una calculadora en c#\nPresiona cualquier tecla para continuar...");
+		Console.ReadKey();
+		Console.Clear();
+		Menu();
+	}
 		public static void Menu(){
 			Console.WriteLine("Introduce el operador a usar: Suma, Resta, Multiplicacion, Division.");
 			string lector = Console.ReadLine().ToLower();
