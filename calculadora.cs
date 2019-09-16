@@ -1,135 +1,141 @@
 using System;
+using System.Collections.Generic; 
 namespace algo{
 	class calculadora{
-/*############################ Mensaje de bienvenida ##################################*/		
-		public static void Main(){
-		Console.WriteLine("Bienvenido a una calculadora en c#\nPresiona cualquier tecla para continuar...");
-		Console.ReadKey();
-		Console.Clear();
-		Menu();
-		}/*############################ Fin del mensaje ##########################*/
+		public static void Main(string[] args){
+				List<string> ht = new List<string>();
+				string[] historial = ht.ToArray();
+				Console.WriteLine("Bienvenido a una calculadora en c#\nPresiona cualquier tecla para continuar...");
+				Console.ReadKey();
+				Console.Clear();
+				Menu(historial);
+					}
 /*############################### Menu aquí arriba #################################*/
-		public static void Menu(){
+		public static void Menu(string[] historial){
 			double operando1 = 0;
 			double operando2 = 0;
+			//double operando3 = 0;
+			//double operando4 = 0;
 			double resultado = 0;
 			string resultadofinal = "";
 			string confirmacion = "";
-			Console.WriteLine("Introduce el operador a usar: Suma, Resta, Multiplicacion, Division.   (Tambien puede usar Salir e Historial)");
+			Console.WriteLine("Introduce el operador a usar: Suma, Resta, Multiplicacion, Division.  (Tambien puede usar: Promedio, Historial & Salir.)");
 			string lector = Console.ReadLine().ToLower();
+			Console.Clear();
 			switch(lector){
 				case "suma":
-				Console.Clear();
-				Console.WriteLine("Introduce un operando: ");
-				operando1 = Convert.ToDouble(Console.ReadLine());
-				Console.WriteLine("Introduce el segundo operando: ");
-				operando2 = Convert.ToDouble(Console.ReadLine());
-				resultado = suma(operando1,operando2);
-				resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" + "+operando2+" = "+resultado;
-				Console.WriteLine(resultadofinal);
-				Console.ReadKey();
-				Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
-				confirmacion = Console.ReadLine().ToLower();
-				if(confirmacion == "si"){
-					Console.Clear();
-					Console.WriteLine("Regresando al menu...");
-					Menu();
-				}else{
-					Console.Clear();
-					Console.WriteLine("Vuelva pronto.");
+					Console.WriteLine("Introduce un operando: ");
+					operando1 = Convert.ToDouble(Console.ReadLine());
+					Console.WriteLine("Introduce el segundo operando: ");
+					operando2 = Convert.ToDouble(Console.ReadLine());
+					resultado = suma(operando1,operando2);
+					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" + "+operando2+" = "+resultado;
+					Console.WriteLine(resultadofinal);
+					ht = resultadofinal;
 					Console.ReadKey();
-				}
-
-					break;
+					Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
+					confirmacion = Console.ReadLine().ToLower();
+					if(confirmacion == "si"){
+						Console.Clear();
+						Console.WriteLine("Regresando al menu...");
+						Menu(historial);
+					}else{
+						Console.Clear();
+						Console.WriteLine("Vuelva pronto.");
+						Console.ReadKey();
+					}
+				break;
 
 				case "resta":
-				Console.Clear();
-				Console.WriteLine("Introduce un operando: ");
-				operando1 = Convert.ToDouble(Console.ReadLine());
-				Console.WriteLine("Introduce el segundo operando: ");
-				operando2 = Convert.ToDouble(Console.ReadLine());
-				resultado = resta(operando1,operando2);
-				resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" - "+operando2+" = "+resultado;
-				Console.WriteLine(resultadofinal);
-				Console.ReadKey();
-				Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
-				confirmacion = Console.ReadLine().ToLower();
-				if(confirmacion == "si"){
 					Console.Clear();
-					Console.WriteLine("Regresando al menu...");
-					Menu();
-				}else{
-					Console.Clear();
-					Console.WriteLine("Vuelva pronto.");
+					Console.WriteLine("Introduce un operando: ");
+					operando1 = Convert.ToDouble(Console.ReadLine());
+					Console.WriteLine("Introduce el segundo operando: ");
+					operando2 = Convert.ToDouble(Console.ReadLine());
+					resultado = resta(operando1,operando2);
+					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" - "+operando2+" = "+resultado;
+					Console.WriteLine(resultadofinal);
 					Console.ReadKey();
-				}
-
-					break;
+					Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
+					confirmacion = Console.ReadLine().ToLower();
+					if(confirmacion == "si"){
+						Console.Clear();
+						Console.WriteLine("Regresando al menu...");
+						Menu(historial);
+					}else{
+						Console.Clear();
+						Console.WriteLine("Vuelva pronto.");
+						Console.ReadKey();
+					}
+				break;
 
 				case "multiplicacion":
-				Console.Clear();
-				Console.WriteLine("Introduce un operando: ");
-				operando1 = Convert.ToDouble(Console.ReadLine());
-				Console.WriteLine("Introduce el segundo operando: ");
-				operando2 = Convert.ToDouble(Console.ReadLine());
-				resultado = multiplicacion(operando1,operando2);
-				resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" * "+operando2+" = "+resultado;
-				Console.WriteLine(resultadofinal);
-				Console.ReadKey();
-				Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
-				confirmacion = Console.ReadLine().ToLower();
-				if(confirmacion == "si"){
 					Console.Clear();
-					Console.WriteLine("Regresando al menu...");
-					Menu();
-				}else{
-					Console.Clear();
-					Console.WriteLine("Vuelva pronto.");
+					Console.WriteLine("Introduce un operando: ");
+					operando1 = Convert.ToDouble(Console.ReadLine());
+					Console.WriteLine("Introduce el segundo operando: ");
+					operando2 = Convert.ToDouble(Console.ReadLine());
+					resultado = multiplicacion(operando1,operando2);
+					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" * "+operando2+" = "+resultado;
+					Console.WriteLine(resultadofinal);
 					Console.ReadKey();
-				}
-
+					Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
+					confirmacion = Console.ReadLine().ToLower();
+					if(confirmacion == "si"){
+						Console.Clear();
+						Console.WriteLine("Regresando al menu...");
+						Menu(historial);
+					}else{
+						Console.Clear();
+						Console.WriteLine("Vuelva pronto.");
+						Console.ReadKey();
+					}
 				break;
 
 				case "division":
-				Console.Clear();
-				Console.WriteLine("Introduce un operando: ");
-				operando1 = Convert.ToDouble(Console.ReadLine());
-				Console.WriteLine("Introduce el segundo operando: ");
-				operando2 = Convert.ToDouble(Console.ReadLine());
-				resultado = division(operando1,operando2);
-				resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" / "+operando2+" = "+resultado;
-				Console.WriteLine(resultadofinal);
-				Console.ReadKey();
-				Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
-				confirmacion = Console.ReadLine().ToLower();
-				if(confirmacion == "si"){
 					Console.Clear();
-					Console.WriteLine("Regresando al menu...");
-					Menu();
-				}else{
-					Console.Clear();
-					Console.WriteLine("Vuelva pronto.");
+					Console.WriteLine("Introduce un operando: ");
+					operando1 = Convert.ToDouble(Console.ReadLine());
+					Console.WriteLine("Introduce el segundo operando: ");
+					operando2 = Convert.ToDouble(Console.ReadLine());
+					resultado = division(operando1,operando2);
+					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" / "+operando2+" = "+resultado;
+					Console.WriteLine(resultadofinal);
 					Console.ReadKey();
-				}
+					Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
+					confirmacion = Console.ReadLine().ToLower();
+					if(confirmacion == "si"){
+						Console.Clear();
+						Console.WriteLine("Regresando al menu...");
+						Menu(historial);
+					}else{
+						Console.Clear();
+						Console.WriteLine("Vuelva pronto.");
+						Console.ReadKey();
+					}
+				break;
 
+					case "promedio":
+						Console.WriteLine("En desarrollo...");
+						Console.ReadKey();
 					break;
 
 				case "historial":
-				Console.WriteLine("En desarrollo...");
-				Console.ReadKey();	
-					break;
+					Console.WriteLine("En desarrollo...");
+					Console.ReadKey();	
+				break;
 
 				case "salir":
-				Console.WriteLine("Vuelva pronto...");
-				Console.ReadKey();
-					break;
+					Console.WriteLine("Vuelva pronto...");
+					Console.ReadKey();
+				break;
 
 				default:
-				Console.WriteLine("\nIntroduce una opción valida.");
-				Console.ReadKey();
-				Console.Clear();
-				Menu();
-					break;
+					Console.WriteLine("\nIntroduce una opción valida.");
+					Console.ReadKey();
+					Console.Clear();
+					Menu(historial);
+				break;
 			}/*################### Fin del menú ############################*/
 /*################################### Operadores matematicos ##############################*/
 		}public static double suma(double operador1, double operador2){
