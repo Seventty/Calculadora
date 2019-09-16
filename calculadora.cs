@@ -1,12 +1,13 @@
 using System;
 namespace algo{
 	class calculadora{
+/*############################ Mensaje de bienvenida ##################################*/		
 		public static void Main(){
-						Console.WriteLine("Bienvenido a una calculadora en c#\nPresiona cualquier tecla para continuar...");
-						Console.ReadKey();
-						Console.Clear();
-						Menu();
-					}
+		Console.WriteLine("Bienvenido a una calculadora en c#\nPresiona cualquier tecla para continuar...");
+		Console.ReadKey();
+		Console.Clear();
+		Menu();
+		}/*############################ Fin del mensaje ##########################*/
 /*############################### Menu aquí arriba #################################*/
 		public static void Menu(){
 			double operando1 = 0;
