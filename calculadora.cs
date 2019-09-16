@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace algo{
 	class calculadora{
 		public static void Main(string[] args){
-				string[] historial = new string[100];
+				string[] historial = new string[1];
 				Console.WriteLine("Bienvenido a una calculadora en c#\nPresiona cualquier tecla para continuar...");
 				Console.ReadKey();
 				Console.Clear();
@@ -28,10 +28,10 @@ namespace algo{
 					Console.WriteLine("Introduce el segundo operando: ");
 					operando2 = Convert.ToDouble(Console.ReadLine());
 					resultado = suma(operando1,operando2);
-					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" + "+operando2+" = "+resultado+"\n Esta operacion fue realizada: ###################### El ["+DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:tt] ####################");
+					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" + "+operando2+" = "+resultado;
 					Console.WriteLine(resultadofinal);
+					resultadofinal= "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" + "+operando2+" = "+resultado+"\nEsta operacion fue realizada: ###################### El ["+DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:tt] ####################");
 					historial[0] = resultadofinal;
-					resultadofinal= "\nEsta operacion fue realizada: ###################### El ["+DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:tt] ####################");
 					Console.ReadKey();
 					Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
 					confirmacion = Console.ReadLine().ToLower();
@@ -53,9 +53,10 @@ namespace algo{
 					Console.WriteLine("Introduce el segundo operando: ");
 					operando2 = Convert.ToDouble(Console.ReadLine());
 					resultado = resta(operando1,operando2);
-					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" - "+operando2+" = "+resultado+"\n Esta operacion fue realizada: ###################### El ["+DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:tt] ####################");
+					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" - "+operando2+" = "+resultado;
 					Console.WriteLine(resultadofinal);
 					resultadofinal = "\nEsta operacion fue realizada: ###################### El ["+DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:tt] ####################");
+					historial[0] = resultadofinal;
 					Console.ReadKey();
 					Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
 					confirmacion = Console.ReadLine().ToLower();
@@ -80,6 +81,7 @@ namespace algo{
 					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" * "+operando2+" = "+resultado+"\n Esta operacion fue realizada: ###################### El ["+DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:tt] ####################");
 					Console.WriteLine(resultadofinal);
 					resultadofinal = "\nEsta operacion fue realizada: ###################### El ["+DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:tt] ####################");
+					historial[0] = resultadofinal;
 					Console.ReadKey();
 					Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
 					confirmacion = Console.ReadLine().ToLower();
@@ -104,6 +106,7 @@ namespace algo{
 					resultadofinal = "El resultado de la operación {"+lector+"}: "+operando1.ToString()+" / "+operando2+" = "+resultado;
 					Console.WriteLine(resultadofinal);
 					resultadofinal = "\nEsta operacion fue realizada: ###################### El ["+DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:tt] ####################");
+					historial[0] = resultadofinal;
 					Console.ReadKey();
 					Console.WriteLine("\n¿Quiere realizar otra operacion? Si o No");
 					confirmacion = Console.ReadLine().ToLower();
